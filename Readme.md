@@ -23,7 +23,7 @@ Este microserviço é responsável pela gestão de usuários do sistema PampaBoo
 
 1. Clone este repositório:
     ```bash
-    git clone https://github.com/seu-usuario/pampabooks-user-service.git
+    git clone https://github.com/igorsimoes4/pampabooks-user-service.git
     ```
 
 2. Instale as dependências:
