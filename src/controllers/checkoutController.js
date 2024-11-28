@@ -7,7 +7,7 @@ const User = require('../models/User');
 
 
 // URL do microserviço de livros
-const BOOKS_SERVICE_URL = process.env.BOOKS_SERVICE_URL || 'http://localhost:3002/api/books/search';
+const BOOKS_SERVICE_URL = process.env.BOOKS_SERVICE_URL || 'https://catalog-service-mdg2.onrender.com/api/books/search';
 
 // Função para finalizar a compra
 exports.completeCheckout = async (req, res) => {
@@ -28,7 +28,7 @@ exports.completeCheckout = async (req, res) => {
         const productIds = cart.map(item => item.productId);
 
         // Buscar informações dos livros no microserviço
-        const response = await axios.get(`http://127.0.0.1:3002/api/books/search`, {
+        const response = await axios.get(`https://catalog-service-mdg2.onrender.com/api/books/search`, {
             params: { ids: productIds.join(',') }
         });
         const books = response.data.books;
