@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const userController = require('../controllers/userController');
+const checkoutController = require('../controllers/checkoutController');
 const jwt = require('jsonwebtoken');
 
 // Middleware de autorização
@@ -27,6 +28,8 @@ router.post('/register', userController.registerUser);
 
 // Rota para login de usuário (autenticação)
 router.post('/login', userController.loginUser);  // Apenas chama o controlador diretamente
+
+router.post('/finalize', authorize, checkoutController.completeCheckout);
 
 // Rota para obter o perfil do usuário (protegida)
 router.get('/profile', authorize, userController.getUserProfile);
